@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useEffect} from "react";
+import BannerComponent from "./Components/Banner/BannerComponent";
 
 const HomePage = () => {
-  return (
-    <div className="homepage_container">
-      <h1>HomePage</h1>
-    </div>
-  );
+
+    useEffect(()=>{
+        const body = document.body;
+        body.classList.add("default_theme")
+    },[])
+    return (
+        <div className="homepage_container">
+            <BannerComponent />
+        </div>
+    );
 };
 
 export default HomePage;

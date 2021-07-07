@@ -1,0 +1,29 @@
+@import "../../../../scss/variables.scss";
+
+.header {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 15px;
+    left: 0;
+    width: 100%;
+
+    .subcontainer_header {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        justify-content: space-between;
+        font-family: $main-font; 
+        font-size: 20px; 
+        font-weight: 700;
+    }
+
+    .btn_menu_container {
+        fill: var(--main-text-color-2);
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+    }
+}
