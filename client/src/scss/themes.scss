@@ -2,9 +2,8 @@ $themes: (
     "default": (
         bg-1: linear-gradient(180deg, #480069 1.56%, #320083 50%, #040006 100%),
         text-color-1: #000000,
-
         text-color-2: #ffffff,
-        color-1: #0A3E8C
+        color-1: #0a3e8c,
     ),
     "dark": (),
 );
@@ -12,10 +11,10 @@ $themes: (
 @each $theme, $map in $themes {
     .#{$theme}_theme {
         --main-bg-1: #{map-get($map: $map, $key: "bg-1")};
-        
+
         --main-text-color-1: #{map-get($map: $map, $key: "text-color-1")};
         --main-text-color-2: #{map-get($map: $map, $key: "text-color-2")};
-        
+
         --main-color-1: #{map-get($map: $map, $key: "color-1")};
     }
 }

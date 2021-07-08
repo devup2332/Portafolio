@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import AboutComponent from "./Components/About/AboutComponent";
 import BannerComponent from "./Components/Banner/BannerComponent";
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
     return (
         <div className="homepage_container">
             <BannerComponent />
+            <AboutComponent />
         </div>
     );
 };

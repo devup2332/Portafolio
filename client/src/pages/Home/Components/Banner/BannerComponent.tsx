@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderComponent from "../Header/HeaderComponent";
+import DownIcon from "../../../../assets/down.svg";
 
 const BannerComponent = () => {
     return (
@@ -10,6 +11,8 @@ const BannerComponent = () => {
                 <p className="banner_subtitle">FULL STACK DEVELOPER</p>
                 <button className="banner_btn_contact">Contact Me</button>
             </div>
+
+            <DownIcon className="arrow-icon"/>
         </div>
     );
 };
