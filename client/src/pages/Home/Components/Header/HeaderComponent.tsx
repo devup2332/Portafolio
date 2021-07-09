@@ -1,10 +1,30 @@
-import React, { Fragment } from "react";
+import React, { Fragment, MouseEvent } from "react";
 import MenuIcon from "../../../../assets/menu.svg";
 
 const HeaderComponent = () => {
-    const openNav = () => {
+
+    //Handler for close Nav
+    const closeNav = (e: Event) => {
+        const btn = document.querySelector(".btn_menu_container");
+        if (
+           ! btn.contains(e.target as Node)
+        ) {
+            document.querySelector('.header-nav').classList.remove("down");
+            document.removeEventListener('click', closeNav)
+            
+        }
+    };
+
+    //Basic function to close nav when user clicks aoutside nav
+    const openNav = (e: MouseEvent<HTMLDivElement>) => {
         const nav = document.querySelector(".header-nav");
         nav.classList.toggle("down");
+
+        document.addEventListener(
+            "click",
+            closeNav,
+            true
+        );
     };
 
     return (

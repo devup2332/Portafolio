@@ -45,7 +45,7 @@
     border-radius: 10px;
     z-index: 1;
     overflow: hidden;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
 
     ul {
         list-style: none;
@@ -55,18 +55,15 @@
             padding: 20px 10px;
             color: var(--main-text-color-1);
             cursor: pointer;
-            transition: background .3s ease;
+            transition: background 0.3s ease;
 
             &:hover {
                 background: #dddddd;
             }
         }
-
-        
     }
 }
 
 .header-nav.down {
     transform: translate(-50%, -50%);
 }
-
