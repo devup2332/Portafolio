@@ -1,6 +1,7 @@
 $themes: (
     "default": (
         bg-1: linear-gradient(180deg, #480069 1.56%, #320083 50%, #040006 100%),
+        bg-2: linear-gradient(180deg, #7100A7 0%, #1700A2 100%),
         text-color-1: #000000,
         text-color-2: #ffffff,
         color-1: #0a3e8c,
@@ -16,5 +17,5 @@ $themes: (
         --main-text-color-2: #{map-get($map: $map, $key: "text-color-2")};
 
         --main-color-1: #{map-get($map: $map, $key: "color-1")};
-    }
-}
+        --main-bg-2: #{map-get($map: $map, $key: "bg-2")};
+}}

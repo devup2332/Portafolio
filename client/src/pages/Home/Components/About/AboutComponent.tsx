@@ -1,11 +1,11 @@
 import React from "react";
-import DjangoIcon from "../../../../assets/django _color 2.svg"; 
-import AngularIcon from "../../../../assets/angular _color 2.svg"; 
-import ReactIcon from "../../../../assets/react (1) 2.svg"; 
-import WebpackIcon from "../../../../assets/webpack_color 1.svg"; 
-import JsIcon from "../../../../assets/javascript_color 1.svg"; 
-import PythonIcon from "../../../../assets/python_color 2.svg"; 
-import NodeIcon from "../../../../assets/node-js_color 1.svg"; 
+import DjangoIcon from "../../../../assets/django _color 2.svg";
+import AngularIcon from "../../../../assets/angular _color 2.svg";
+import ReactIcon from "../../../../assets/react (1) 2.svg";
+import WebpackIcon from "../../../../assets/webpack_color 1.svg";
+import JsIcon from "../../../../assets/javascript_color 1.svg";
+import PythonIcon from "../../../../assets/python_color 2.svg";
+import NodeIcon from "../../../../assets/node-js_color 1.svg";
 
 const AboutComponent = () => {
     return (

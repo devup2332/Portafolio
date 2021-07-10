@@ -1,0 +1,28 @@
+@import "../../../../scss/variables.scss";
+
+.aboutcomponent-container {
+    .about-subcontainer {
+        font-family: $main-font;
+        padding: 45px 0px;
+        width: 90%;
+        display: grid;
+        margin: auto;
+        gap: 20px;
+
+        .about-title {
+            text-align: center;
+            font-size: 45px;
+            color: var(--main-color-1);
+        }
+
+        .about-description {
+            text-align: center;
+            font-size: 14px;
+            line-height: 25px;
+        }
+
+        .about-btn-cv {
+            @include button_1;
+        }
+    }
+}

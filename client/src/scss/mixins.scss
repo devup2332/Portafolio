@@ -1,0 +1,36 @@
+@import "./fonts.scss", "./themes.scss";
+
+@mixin button_1 {
+    width: 180px;
+    height: 55px;
+    display: block;
+    border-radius: 10px;
+    justify-self: center;
+    font-family: $main-font;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    color: var(--main-text-color-2);
+    position: relative;
+    border: 2px solid transparent;
+    overflow: hidden;
+    background: transparent;
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: var(--main-bg-2);
+    }
+
+    &:hover {
+        background: #fafafa;
+        color: black;
+        border: 2px solid var(--main-color-1);
+    }
+}
