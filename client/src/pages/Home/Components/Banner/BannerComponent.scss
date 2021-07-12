@@ -69,3 +69,18 @@
         transform: translate(-50%,0%);
     }
 }
+
+
+@media (min-width:600px) {
+    .banner_cont {
+        .banner_body {
+            .banner_title {
+                font-size: 70px;
+            }
+
+            .banner_subtitle {
+                font-size: 25px;
+            }
+        }
+    }
+}

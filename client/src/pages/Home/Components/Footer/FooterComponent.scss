@@ -1,0 +1,42 @@
+@import "../../../../scss/variables.scss";
+
+.footer-component-container {
+    font-family: $main-font;
+    position: relative;
+    height: 160px;
+
+    display: flex;
+    align-items: flex-end;
+
+    .footer-body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+
+        .footer-logo {
+            text-align: center;
+            font-size: 50px;
+            color: var(--main-color-1);
+            font-weight: 700;
+        }
+
+        .options {
+            margin-top: 50px;
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            color: var(--main-text-color-2);
+
+            li {
+                cursor: pointer;
+            }
+        }
+    }
+    img {
+        display: block;
+        object-fit: cover;
+        height: 130px;
+    }
+}

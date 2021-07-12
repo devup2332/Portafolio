@@ -1,4 +1,4 @@
-import React, { Fragment, MouseEvent } from "react";
+import React, { Fragment, MouseEvent, useEffect } from "react";
 import MenuIcon from "../../../../assets/menu.svg";
 
 const HeaderComponent = () => {
@@ -19,6 +19,17 @@ const HeaderComponent = () => {
         document.addEventListener("click", closeNav, true);
     };
 
+    useEffect(() => {
+        document.addEventListener("scroll", (e) => {
+            if (document.documentElement.scrollTop > 200) {
+                document.querySelector(".header").classList.add("active");
+            } else {
+                document
+                    .querySelector(".header")
+                    .classList.remove("active");
+            }
+        });
+    }, []);
     return (
         <Fragment>
             <div className="header">

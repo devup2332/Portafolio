@@ -24,13 +24,30 @@ const AboutComponent = () => {
                 </button>
             </div>
             <div className="about-right-container">
-                <DjangoIcon />
-                <AngularIcon />
-                <ReactIcon />
-                <WebpackIcon />
-                <JsIcon />
-                <PythonIcon />
-                <NodeIcon />
+                <div className="icon-container">
+                    <DjangoIcon />
+                </div>
+
+                <div className="icon-container">
+                    <AngularIcon />
+                </div>
+
+                <div className="icon-container">
+                    <ReactIcon />
+                </div>
+                <div className="icon-container">
+                    <WebpackIcon />
+                </div>
+                <div className="icon-container">
+                    <JsIcon />
+                </div>
+
+                <div className="icon-container">
+                    <PythonIcon/>
+                </div>
+                <div className="icon-container">
+                    <NodeIcon />
+                </div>
             </div>
         </div>
     );

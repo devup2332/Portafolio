@@ -25,4 +25,24 @@
             @include button_1;
         }
     }
+
+    .about-right-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 90%;
+        gap: 30px;
+        margin: auto;
+
+        .icon-container {
+            justify-self: center;
+            svg {
+                width: 60px;
+                height: 60px;
+            }
+
+            &:last-child {
+                grid-column: 2 / 3;
+            }
+        }
+    }
 }
