@@ -8,7 +8,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 95%;
+        width: 90%;
         display: grid;
         gap: 30px;
         font-family: $main-font;
@@ -23,24 +23,11 @@
             text-align: center;
         }
         .banner_btn_contact {
-            margin-top: 35px;
-            width: 180px;
-            height: 55px;
-            border-radius: 10px;
-            color: var(--main-text-color-2);
-            background: var(--main-color-1);
-            outline: none;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: 600;
-            justify-self: center;
-            transition: background .3s ease, color .3s ease;
+            @include button_1;
+        }
 
-            &:hover {
-                background: var(--main-text-color-2);
-                color: var(--main-text-color-1);
-            }
+        .banner-image {
+            display: none;
         }
     }
 
@@ -58,20 +45,17 @@
 
 @keyframes arrowDown {
     0% {
-        transform: translate(-50%,0%);
+        transform: translate(-50%, 0%);
     }
     50% {
-        
-        transform: translate(-50%,20px);
+        transform: translate(-50%, 20px);
     }
     100% {
-
-        transform: translate(-50%,0%);
+        transform: translate(-50%, 0%);
     }
 }
 
-
-@media (min-width:600px) {
+@media (min-width: 600px) {
     .banner_cont {
         .banner_body {
             .banner_title {
@@ -80,6 +64,56 @@
 
             .banner_subtitle {
                 font-size: 25px;
+            }
+        }
+    }
+}
+
+@media (min-width: 980px) {
+    .banner_cont {
+        .banner_body {
+            max-width: 1300px;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 30px 0px;
+
+            .banner_title {
+                text-align: left;
+            }
+
+            .banner_subtitle {
+                text-align: left;
+            }
+
+            .banner_btn_contact {
+                justify-self: left;
+            }
+            .banner-image {
+                display: block;
+                grid-column: 2 / 3;
+                grid-row: 1 / 4;
+                align-self: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 1360px) {
+    .banner_cont {
+        .banner_body {
+            gap: 55px;
+            .banner_title {
+                font-size: 90px;
+            }
+
+            .banner_subtitle {
+                font-size: 30px;
+            }
+
+            .banner_btn_contact {
+                font-size: 20px;
+                width: 220px;
+                height: 70px;
             }
         }
     }

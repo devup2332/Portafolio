@@ -8,7 +8,7 @@
     left: 0;
     z-index: 1;
     width: 100%;
-    transition: background .3s ease,top .3s ease, padding .3s ease;
+    transition: background 0.3s ease, top 0.3s ease, padding 0.3s ease;
 
     .subcontainer_header {
         display: flex;
@@ -20,7 +20,7 @@
         .logo {
             font-size: 20px;
             font-weight: 700;
-            transition: color .3s ease;
+            transition: color 0.3s ease;
         }
         .btn_menu_container {
             fill: var(--main-text-color-2);
@@ -29,12 +29,47 @@
             display: flex;
             width: 25px;
             height: 25px;
-            transition: fill .3s ease;
+            transition: fill 0.3s ease;
 
             .menu-icon {
                 width: 100%;
                 height: 100%;
             }
+        }
+
+        .header-nav {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -750px);
+            background: var(--main-text-color-2);
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0px 0px 5px 0px rgba($color: #000000, $alpha: 0.5);
+            transition: transform 0.3s ease;
+
+            ul {
+                list-style: none;
+
+                .option {
+                    font-family: $main-font;
+                    padding: 20px 10px;
+                    color: var(--main-text-color-1);
+                    cursor: pointer;
+                    transition: background 0.3s ease;
+
+                    &:hover {
+                        background: #dddddd;
+                    }
+                }
+            }
+        }
+
+        .header-nav.down {
+            transform: translate(-50%, -50%);
         }
     }
 }
@@ -44,7 +79,7 @@
     top: 0;
     padding: 20px 0px;
     box-shadow: 0px 3px 10px -3px var(--main-text-color-1);
-    
+
     .subcontainer_header {
         .logo {
             color: var(--main-text-color-1);
@@ -56,42 +91,6 @@
     }
 }
 
-.header-nav {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -700px);
-    background: var(--main-text-color-2);
-    width: 90%;
-    max-width: 400px;
-    border-radius: 10px;
-    z-index: 1;
-    overflow: hidden;
-    box-shadow: 0px 0px 5px 0px rgba($color: #000000, $alpha: .5);
-    transition: transform 0.3s ease;
-
-    ul {
-        list-style: none;
-
-        .option {
-            font-family: $main-font;
-            padding: 20px 10px;
-            color: var(--main-text-color-1);
-            cursor: pointer;
-            transition: background 0.3s ease;
-
-            &:hover {
-                background: #dddddd;
-            }
-        }
-    }
-}
-
-.header-nav.down {
-    transform: translate(-50%, -50%);
-}
-
-
 @media (min-width: 600px) {
     .header {
         .subcontainer_header {
@@ -101,6 +100,87 @@
             .btn_menu_container {
                 width: 30px;
                 height: 30px;
+            }
+        }
+    }
+}
+
+@media (min-width: 810px) {
+    .header {
+        .subcontainer_header {
+            max-width: 1300px;
+
+            .logo {
+                font-size: 40px;
+            }
+            .btn_menu_container {
+                display: none;
+            }
+            .header-nav {
+                position: unset;
+                transform: translate(0px, 0px);
+                box-shadow: none;
+                background: none;
+                max-width: 450px;
+
+                ul {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .option {
+                        color: var(--main-text-color-2);
+                        position: relative;
+                        transition: color 0.3s ease;
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            bottom: 0;
+                            left: 0;
+                            width: 0%;
+                            height: 2px;
+                            background: #fafafa;
+                            transition: width 0.3s ease, background 0.3s ease;
+                        }
+
+                        &:hover {
+                            background: none;
+                            color: #e5e5e5;
+                        }
+                    }
+
+                    .option.active {
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header.active {
+        .subcontainer_header {
+            .header-nav {
+                ul {
+                    .option {
+                        color: var(--main-text-color-1);
+
+                        &::before {
+                            background: var(--main-text-color-1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1360px) {
+    .header {
+        .subcontainer_header {
+            .logo {
+                font-size: 55px;
             }
         }
     }

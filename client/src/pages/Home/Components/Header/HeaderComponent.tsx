@@ -24,9 +24,7 @@ const HeaderComponent = () => {
             if (document.documentElement.scrollTop > 200) {
                 document.querySelector(".header").classList.add("active");
             } else {
-                document
-                    .querySelector(".header")
-                    .classList.remove("active");
+                document.querySelector(".header").classList.remove("active");
             }
         });
     }, []);
@@ -35,20 +33,20 @@ const HeaderComponent = () => {
             <div className="header">
                 <div className="subcontainer_header">
                     <div className="logo">OASIS</div>
+
+                    <nav className="header-nav">
+                        <ul className="nav_menu_options">
+                            <li className="option">Home</li>
+                            <li className="option">Projects</li>
+                            <li className="option">About</li>
+                            <li className="option">Contact</li>
+                        </ul>
+                    </nav>
                     <div className="btn_menu_container" onClick={openNav}>
                         <MenuIcon className="menu-icon" />
                     </div>
                 </div>
             </div>
-
-            <nav className="header-nav">
-                <ul className="nav_menu_options">
-                    <li className="option">Home</li>
-                    <li className="option">Projects</li>
-                    <li className="option">About</li>
-                    <li className="option">Contact</li>
-                </ul>
-            </nav>
         </Fragment>
     );
 };
