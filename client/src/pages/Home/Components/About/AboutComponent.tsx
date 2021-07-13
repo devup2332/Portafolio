@@ -11,6 +11,8 @@ const AboutComponent = () => {
     return (
         <div className="aboutcomponent-container">
             <div className="about-subcontainer">
+
+            <div className="left-container">
                 <h1 className="about-title">ABOUT ME</h1>
                 <p className="about-description">
                     At vero eos et accusamus et iusto odio dignissimos ducimus
@@ -48,6 +50,7 @@ const AboutComponent = () => {
                 <div className="icon-container">
                     <NodeIcon />
                 </div>
+            </div>
             </div>
         </div>
     );

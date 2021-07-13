@@ -6,83 +6,220 @@ $item-gap: 30px;
     font-family: $main-font;
     padding: 60px 0px;
 
-    .projects-component-title {
-        color: var(--main-color-1);
-        text-align: center;
-        font-size: 45px;
-    }
-
-    .projects {
+    .projects-subcontainer {
         width: 90%;
+        max-width: 450px;
         margin: auto;
-        display: grid;
-        gap: 50px;
 
-        .item {
+        .projects-component-title {
+            color: var(--main-color-1);
+            text-align: center;
+            font-size: 45px;
+        }
+
+        .projects {
             display: grid;
-            gap: $item-gap;
+            gap: 50px;
 
-            .item-title {
-                color: var(--main-color-1);
-                font-weight: 900;
-                text-align: center;
-            }
-
-            .item-primary-descr {
+            .item {
                 display: grid;
                 gap: $item-gap;
 
-                .item-descr {
-                    line-height: 25px;
+                .item-title {
+                    color: var(--main-color-1);
+                    font-weight: 900;
+                    text-align: center;
                 }
 
-                .item-img-cont {
-                    border-radius: 20px;
-                    overflow: hidden;
-                    box-shadow: 0px 0px 10px -2px #000000;
-                    img {
-                        object-fit: cover;
+                .item-primary-descr {
+                    display: grid;
+                    gap: $item-gap;
+
+                    .item-descr {
+                        line-height: 25px;
+                    }
+
+                    .item-img-cont {
+                        border-radius: 20px;
+                        overflow: hidden;
+                        box-shadow: 0px 0px 20px 0px
+                            rgba($color: #000, $alpha: 0.5);
+                        img {
+                            object-fit: cover;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .item-second-descr {
+                    display: grid;
+                    gap: $item-gap;
+
+                    .item-descr {
+                        line-height: 25px;
+                    }
+
+                    .technologies-item {
+                        grid-row: 3 / 4;
+                        gap: 20px;
+                        display: flex;
+                        justify-self: center;
+                        svg {
+                            width: 45px;
+                            height: 45px;
+                        }
+                    }
+
+                    .item-img-cont {
+                        border-radius: 20px;
+                        overflow: hidden;
+                        box-shadow: 0px 0px 20px 0px
+                            rgba($color: #000, $alpha: 0.5);
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .btns-item {
+                        grid-row: 4 / 5;
+                        display: flex;
+                        justify-self: center;
+                        gap: 20px;
+
+                        .btn-visit-item {
+                            @include button_1;
+                            width: 140px;
+                        }
+
+                        .btn-code-item {
+                            @include button_2;
+                        }
                     }
                 }
             }
+        }
+    }
+}
 
-            .item-second-descr {
-                display: grid;
-                gap: $item-gap;
+@media (min-width: 960px) {
+    .projects-component-container {
+        .projects-subcontainer {
+            max-width: 1300px;
+            .projects-component-title {
+                font-size: 55px;
+                text-align: left;
+            }
 
-
-                .item-descr {
-                    line-height: 25px;
-                }
-
-                .technologies-item {
-                    grid-row: 3 / 4;
-                    gap: 20px;
-                    display: flex;
-                    svg {
-                        width: 45px;
-                        height: 45px;
-                    }
-                }
-
-                .item-img-cont {
-                    border-radius: 20px;
-                    overflow: hidden;
-                    box-shadow: 0px 0px 10px -2px #000000;
-                }
-
-                .btns-item {
-                    grid-row: 4 / 5;
-                    display: flex;
-                    gap: 20px;
-
-                    .btn-visit-item {
-                        @include button_1;
-                        width: 140px;
+            .projects {
+                .item {
+                    gap: 60px;
+                    .item-title {
+                        text-align: right;
                     }
 
-                    .btn-code-item {
-                        @include button_2;
+                    .item-primary-descr {
+                        grid-template-columns: 1.4fr 1fr;
+                        gap: 70px;
+
+                        .item-descr {
+                            grid-column: 2 / 3;
+                            text-align: right;
+                            align-self: center;
+                        }
+
+                        .item-img-cont {
+                            grid-row: 1 / 2;
+                        }
+                    }
+
+                    .item-second-descr {
+                        grid-template-columns: 1fr 1.4fr;
+                        gap: 20px 70px;
+
+                        .technologies-item {
+                            grid-row: 2 / 3;
+                            justify-self: left;
+                        }
+
+                        .item-descr {
+                            align-self: center;
+                        }
+
+                        .item-img-cont {
+                            grid-row: 1 / 4;
+                        }
+
+                        .btns-item {
+                            grid-row: 3 / 4;
+                            justify-self: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1100px) {
+    .projects-component-container {
+        .projects-subcontainer {
+            .projects {
+                .item {
+                    .item-title {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1340px) {
+    .projects-component-container {
+        .projects-subcontainer {
+            .projects-component-title {
+                font-size: 65px;
+            }
+
+            .projects {
+                .item {
+                    .item-title {
+                        font-size: 50px;
+                    }
+                    .item-primary-descr {
+                        .item-descr {
+                            line-height: 35px;
+                        }
+                    }
+
+                    .item-second-descr {
+                        .technologies-item {
+                            svg {
+                                width: 80px;
+                                height: 80px;
+                            }
+                        }
+
+                        .item-descr {
+                            line-height: 35px;
+                        }
+
+                        .btns-item {
+                            .btn-visit-item {
+                                height: 70px;
+                                width: 170px;
+                                font-size: 20px;
+                            }
+
+                            .btn-code-item {
+                                height: 70px;
+                                width: 170px;
+                                font-size: 20px;
+                            }
+                        }
                     }
                 }
             }
