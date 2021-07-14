@@ -104,10 +104,14 @@ $item-gap: 30px;
     }
 }
 
+//Responsive Styles
+
 @media (min-width: 960px) {
     .projects-component-container {
+         
         .projects-subcontainer {
             max-width: 1300px;
+
             .projects-component-title {
                 font-size: 55px;
                 text-align: left;

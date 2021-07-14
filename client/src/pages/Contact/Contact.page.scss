@@ -1,0 +1,89 @@
+@import "../../scss/variables.scss";
+
+.contact-page-container {
+    font-family: $main-font;
+    padding: 60px 0px;
+    .contact-page-subcontainer {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        gap: 20px;
+
+        .contact-page-title {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        .form {
+            display: grid;
+            gap: 15px;
+
+            .input-controller {
+                height: 60px;
+
+                input {
+                    padding: 0px 15px;
+                    display: block;
+                    border-radius: 10px;
+                    border: 2px solid var(--main-text-color-1);
+                    width: 100%;
+                    height: 45px;
+                    font-family: $main-font;
+                    outline: none;
+                }
+
+                input.error {
+                    border-color: red;
+                    color: red;
+
+                    &::placeholder {
+                        color: red;
+                    }
+                }
+
+                .message-error {
+                    color: red;
+                    font-size: 13px;
+                    margin-top: 5px;
+                }
+            }
+
+            .textarea-controller {
+                height: 180px;
+
+                textarea {
+                    width: 100%;
+                    height: 160px;
+                    padding: 15px;
+                    font-family: $main-font;
+                    border-radius: 10px;
+                    border: 2px solid var(--main-text-color-1);
+                    outline: none;
+                }
+
+                textarea.error {
+                    border-color: red;
+                    color: red;
+
+                    &::placeholder {
+                        color: red;
+                    }
+                }
+                .message-error {
+                    color: red;
+                    font-size: 13px;
+                    margin-top: 5px;
+                }
+            }
+
+            button[type="submit"] {
+                @include button_1;
+                width: 100%;
+            }
+        }
+    }
+
+    .right-section {
+        display: none;
+    }
+}
