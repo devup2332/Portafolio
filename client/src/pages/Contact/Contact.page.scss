@@ -3,8 +3,10 @@
 .contact-page-container {
     font-family: $main-font;
     padding: 60px 0px;
+    
     .contact-page-subcontainer {
         width: 90%;
+        max-width: 400px;
         margin: auto;
         display: grid;
         gap: 20px;

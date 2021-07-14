@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import environments from "../../environments";
 import { IMessage } from "../../models/message.model";
+import axios from "axios";
 
 const ContactPage = () => {
     //Useing react hook form
@@ -11,8 +12,12 @@ const ContactPage = () => {
         formState: { errors },
     } = useForm();
     //Sending message to server
-    const sendEmail = (message: IMessage) => {
-        console.log(message);
+    const sendEmail = async (message: IMessage) => {
+        const { data } = await axios.post(
+            `${environments.backendUri}/api/emails/send`,
+            message
+        );
+        console.log(data);
     };
     //Setting default theme
     useEffect(() => {
