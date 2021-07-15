@@ -1,4 +1,5 @@
 import React, { Fragment, MouseEvent, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import MenuIcon from "../../../../assets/menu.svg";
 
 const HeaderComponent = () => {
@@ -6,7 +7,7 @@ const HeaderComponent = () => {
     const closeNav = (e: Event) => {
         const btn = document.querySelector(".btn_menu_container");
         if (!btn.contains(e.target as Node)) {
-            document.querySelector(".header-nav").classList.remove("down");
+            document.querySelector(".header-nav")?.classList.remove("down");
             document.removeEventListener("click", closeNav);
         }
     };
@@ -14,19 +15,25 @@ const HeaderComponent = () => {
     //Basic function to close nav when user clicks aoutside nav
     const openNav = () => {
         const nav = document.querySelector(".header-nav");
-        nav.classList.toggle("down");
+        nav?.classList.toggle("down");
 
         document.addEventListener("click", closeNav, true);
     };
 
     useEffect(() => {
-        document.addEventListener("scroll", (e) => {
+        const handleActive = () => {
             if (document.documentElement.scrollTop > 200) {
-                document.querySelector(".header").classList.add("active");
+                document.querySelector(".header")?.classList.add("active");
             } else {
-                document.querySelector(".header").classList.remove("active");
+                document.querySelector(".header")?.classList.remove("active");
             }
-        });
+        };
+        document.addEventListener("scroll", handleActive);
+
+        return () => {
+            document.removeEventListener("click", closeNav);
+            document.removeEventListener("scroll", handleActive);
+        };
     }, []);
     return (
         <Fragment>
@@ -39,7 +46,9 @@ const HeaderComponent = () => {
                             <li className="option">Home</li>
                             <li className="option">Projects</li>
                             <li className="option">About</li>
-                            <li className="option">Contact</li>
+                            <NavLink to="/contact" className="option">
+                                Contact
+                            </NavLink>
                         </ul>
                     </nav>
                     <div className="btn_menu_container" onClick={openNav}>

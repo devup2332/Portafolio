@@ -31,6 +31,13 @@
 
             li {
                 cursor: pointer;
+                text-decoration: none;
+            }
+
+            a {
+                color: var(--main-text-color-2);
+                text-decoration: none;
+                font-size:17px;
             }
         }
     }
@@ -82,6 +89,10 @@
                 margin-top: 90px;
 
                 li {
+                    font-size: 20px;
+                }
+
+                a {
                     font-size: 20px;
                 }
             }
