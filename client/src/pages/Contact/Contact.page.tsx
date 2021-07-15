@@ -122,13 +122,13 @@ const ContactPage = () => {
             </div>
             <div className="right-section">
                 <div className="right-section-body">
-                    <h2 className="riht-section-title">Phone</h2>
+                    <h2 className="right-section-title">Phone</h2>
                     <p>+01 988 343 983</p>
 
-                    <h2 className="riht-section-title">Email</h2>
+                    <h2 className="right-section-title">Email</h2>
                     <p>devup2332@gmail.com</p>
 
-                    <h2 className="riht-section-title">Lives in</h2>
+                    <h2 className="right-section-title">Lives in</h2>
                     <p>Peru,Arequipa, Arequipa</p>
                 </div>
             </div>

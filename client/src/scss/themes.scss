@@ -1,11 +1,19 @@
 $themes: (
     "default": (
         bg-1: linear-gradient(180deg, #480069 1.56%, #320083 50%, #040006 100%),
-        bg-2: linear-gradient(180deg, #7100A7 0%, #1700A2 100%),
-        bg-3: #EDEDED,
+        bg-2: linear-gradient(180deg, #7100a7 0%, #1700a2 100%),
+        bg-3: #ededed,
+        bg-4:
+            linear-gradient(
+                144.05deg,
+                #a020dc 26.67%,
+                #6300a6 46.06%,
+                #1700a2 78.98%
+            ),
         text-color-1: #000000,
         text-color-2: #ffffff,
         color-1: #0a3e8c,
+        danger-color: #ea2027,
     ),
     "dark": (),
 );
@@ -20,4 +28,7 @@ $themes: (
         --main-color-1: #{map-get($map: $map, $key: "color-1")};
         --main-bg-2: #{map-get($map: $map, $key: "bg-2")};
         --main-bg-3: #{map-get($map: $map, $key: "bg-3")};
-}}
+        --main-bg-4: #{map-get($map: $map, $key: "bg-4")};
+        --main-danger-color: #{map-get($map: $map, $key: "danger-color")};
+    }
+}
