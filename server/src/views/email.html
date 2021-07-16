@@ -1,27 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link
-            rel="stylesheet"
-            href="./styles.css"
-            type="text/css"
-            media="screen"
-            title="no title"
-            charset="utf-8"
-        />
-    </head>
-    <body>
-        <div>
-            <ul class="menu">
-                <li class="data">
-                    <span>From :</span> <span>{{email}}</span>
-                    <span>Subject :</span> <span>{{subject}}</span>
-                    <span>Message :</span> <span>{{message}}</span>
-                </li>
-            </ul>
-        </div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .message__container {
+        background: linear-gradient(180deg, #7100a7 0%, #1700a2 100%);
+        border-radius: 20px;
+        font-family: "Roboto", sans-serif;
+        margin: auto;
+        width: 90%;
+        max-width: 620px;
+        color: #ffffff;
+
+        padding: 50px;
+      }
+
+      .menu {
+        list-style: none;
+        display: grid;
+        gap: 30px;
+      }
+
+      .bold__text {
+        font-weight: 700;
+        font-size: 25px;
+      }
+
+      span {
+        font-size: 20px;
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      a {
+          text-decoration: none;
+          color: #ffffff;
+          font-size: 20px;
+      }
+
+      .ii a[href] {
+          color: #ffffff;
+      }
+      h1 {
+        font-size: 40px;
+        font-weight: 400;
+
+      }
+      li {
+        margin: 20px 0px 0px 0px;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="message__container">
+      <h1>EMAIL FROM PORTAFOLIO</h1>
+      <ul class="menu">
+        <li class="data">
+            <span class="bold__text">From :</span> <a href={{(concat 'mailto:' email)}}>{{email}}</a>
+        </li>
+        <li>
+          <span class="bold__text">Subject :</span> <span>{{ subject }}</span>
+        </li>
+        <li>
+          <span class="bold__text">Message :</span> <span>{{ message }}</span>
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>

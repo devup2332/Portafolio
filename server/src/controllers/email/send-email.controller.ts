@@ -32,14 +32,14 @@ export default async (req: Request, res: Response) => {
     html: emailHTML,
   };
 
-  transporter.sendMail(message, (err, inf) => {
-    if (err) {
-      console.log({ ...err });
-    } else {
-      console.log(inf);
-    }
-  });
-  return res.json({
-    message: "Email sended",
-  });
+  try {
+    await transporter.sendMail(message);
+    return res.status(200).json({
+      message: "Email sended",
+    });
+  } catch (err) {
+    return res.status(500).json({
+      message: "Something went wrong",
+    });
+  }
 };
