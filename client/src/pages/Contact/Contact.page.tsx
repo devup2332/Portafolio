@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import environments from "../../environments";
 import { IMessage } from "../../models/message.model";
 import axios from "axios";
+import SnackBar from "../../components/SnackBar/SnackBar";
+import Loading from "../../assets/loading.svg";
 
+let timer: any;
 const ContactPage = () => {
     //Useing react hook form
     const {
@@ -11,18 +14,34 @@ const ContactPage = () => {
         register,
         formState: { errors },
     } = useForm();
+
+    const [message, setMessage] = useState("");
+    const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
     //Sending message to server
     const sendEmail = async (message: IMessage) => {
+        setLoading(true);
         const { data } = await axios.post(
             `${environments.backendUri}/api/emails/send`,
             message
         );
-        console.log(data);
+        //Handle snackbar and loading icon
+
+        setLoading(false);
+        setOpen(true);
+        setMessage(data?.message);
+        timer ? clearTimeout(timer) : null;
+        timer = setTimeout(() => {
+            setOpen(false);
+        }, 3000);
     };
     //Setting default theme
     useEffect(() => {
         const body = document.body;
         body.classList.add("default_theme");
+        return () => {
+            timer ? clearTimeout(timer) : null;
+        };
     }, []);
 
     return (
@@ -117,7 +136,10 @@ const ContactPage = () => {
                             </p>
                         ) : null}
                     </div>
-                    <button type="submit">Contact Me</button>
+                    <button type="submit">
+                        <Loading className={loading ? "loading" : ""}></Loading>{" "}
+                        <span>Contact Me</span>
+                    </button>
                 </form>
             </div>
             <div className="right-section">
@@ -132,6 +154,13 @@ const ContactPage = () => {
                     <p>Peru,Arequipa, Arequipa</p>
                 </div>
             </div>
+
+            <SnackBar
+                message={message}
+                open={open}
+                setOpen={setOpen}
+                timer={timer}
+            />
         </div>
     );
 };

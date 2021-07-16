@@ -21,7 +21,7 @@ const BannerComponent = () => {
             <div className="banner_body">
                 <h1 className="banner_title">DIEGO ROJAS</h1>
                 <p className="banner_subtitle">FULL STACK DEVELOPER</p>
-                <NavLink to="/contact" className="banner_btn_contact">Contect Me</NavLink>
+                <NavLink to="/contact" className="banner_btn_contact">Contact Me</NavLink>
                 <img src={BannerImage} className="banner-image" alt="" />
             </div>
 

@@ -1,0 +1,32 @@
+@import "../../scss/variables.scss";
+
+.snackbar-component {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,200px);
+    border-radius: 20px;
+    background: var(--main-bg-3);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px;
+    box-shadow: 0px 5px 10px 0px rgba($color: #000000, $alpha: .4);
+    width: 90%;
+    max-width: 290px;
+    z-index: 2;
+    transition: transform .3s ease;
+
+    button {
+        outline: none;
+        border: none;
+        font-size: 17px;
+        color: red;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+    }
+}
+
+.snackbar-component.visible {
+    transform: translate(-50%,-20px);
+}

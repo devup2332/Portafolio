@@ -8,10 +8,38 @@ const FooterComponent = () => {
             <div className="footer-body">
                 <h1 className="footer-logo">OASIS</h1>
                 <ul className="options">
-                    <li className="options-item">Home</li>
-                    <li className="options-item">Projects</li>
-                    <li className="options-item">About</li>
-                    <NavLink to="/contact" className="options-item">
+
+                            <li
+                                className="option-item"
+                                onClick={() => scrollTo(0, 0)}
+                            >
+                                Home
+                            </li>
+                            <li
+                                className="option-item"
+                                onClick={() =>
+                                    document
+                                        .querySelector(
+                                            ".aboutcomponent-container"
+                                        )
+                                        .scrollIntoView()
+                                }
+                            >
+                                About
+                            </li>
+                            <li
+                                className="option-item"
+                                onClick={() =>
+                                    document
+                                        .querySelector(
+                                            ".projects-component-container"
+                                        )
+                                        .scrollIntoView()
+                                }
+                            >
+                                Projects
+                            </li>
+                    <NavLink to="/contact" className="option-items-item">
                         Contact
                     </NavLink>
                 </ul>
