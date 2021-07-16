@@ -1,4 +1,4 @@
-import React, { Fragment, MouseEvent, useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import MenuIcon from "../../../../assets/menu.svg";
 
