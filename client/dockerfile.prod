@@ -1,0 +1,8 @@
+FROM node:14.17.1
+
+WORKDIR /client
+
+COPY ./dist ./
+
+RUN npm install -g serve
+

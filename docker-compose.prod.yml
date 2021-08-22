@@ -1,0 +1,80 @@
+version: "3.9"
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: dockerfile.prod
+    command: serve -s -p 3000
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./client/:/client"
+    networks:
+      - portafolio_net
+
+  server:
+    build:
+      context: ./server
+      dockerfile: dockerfile.prod
+    command: npm start
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./server/.prod.env
+    volumes:
+      - "./server:/server"
+    networks:
+      - portafolio_net
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    depends_on:
+      - server
+      - client
+    networks:
+      - portafolio_net
+    environment: 
+      - VIRTUAL_HOST=drojascam.com,www.drojascam.com
+      - LETSENCRYPT_HOST=drojascam.com,www.drojascam.com
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - certs:/etc/nginx/certs:ro
+      - vhostd:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - ./proxy/max-size.conf:/etc/nginx/conf.d/max-size.conf:ro
+    networks:
+      - portafolio_net
+    labels:
+        - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+
+   letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: always
+    environment:
+      - NGINX_PROXY_CONTAINER=nginx-proxy
+    volumes:
+      - certs:/etc/nginx/certs:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - vhostd:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+    networks:
+      - portafolio_net
+
+networks:
+  portafolio_net:
+    driver: bridge
+
+volumes:
+  certs:
+  html:
+  vhostd: 
