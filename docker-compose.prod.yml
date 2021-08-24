@@ -25,7 +25,6 @@ services:
 
   nginx:
     build: ./nginx
-    container_name: nginx
     restart: always
     depends_on:
       - server
