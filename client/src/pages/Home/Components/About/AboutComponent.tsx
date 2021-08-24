@@ -11,46 +11,43 @@ const AboutComponent = () => {
     return (
         <div className="aboutcomponent-container">
             <div className="about-subcontainer">
+                <div className="left-container">
+                    <h1 className="about-title">ABOUT ME</h1>
+                    <p className="about-description">
+                        My name is Diego Raul Rojas, I have been developing
+                        software for 2 years. I am an enthusiast for software
+                        development as well as for innovation
+                    </p>
+                    <button type="button" className="about-btn-cv">
+                        Download CV
+                    </button>
+                </div>
+                <div className="about-right-container">
+                    <div className="icon-container">
+                        <DjangoIcon />
+                    </div>
 
-            <div className="left-container">
-                <h1 className="about-title">ABOUT ME</h1>
-                <p className="about-description">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium voluptatum deleniti atque
-                    corrupti quos dolores et quas molestias excepturi sint
-                    occaecati cupiditate non provident, similique sunt in culpa
-                    qui officia deserunt mollitia animi, id est laborum{" "}
-                </p>
-                <button type="button" className="about-btn-cv">
-                    Download CV
-                </button>
-            </div>
-            <div className="about-right-container">
-                <div className="icon-container">
-                    <DjangoIcon />
-                </div>
+                    <div className="icon-container">
+                        <AngularIcon />
+                    </div>
 
-                <div className="icon-container">
-                    <AngularIcon />
-                </div>
+                    <div className="icon-container">
+                        <ReactIcon />
+                    </div>
+                    <div className="icon-container">
+                        <WebpackIcon />
+                    </div>
+                    <div className="icon-container">
+                        <JsIcon />
+                    </div>
 
-                <div className="icon-container">
-                    <ReactIcon />
+                    <div className="icon-container">
+                        <PythonIcon />
+                    </div>
+                    <div className="icon-container">
+                        <NodeIcon />
+                    </div>
                 </div>
-                <div className="icon-container">
-                    <WebpackIcon />
-                </div>
-                <div className="icon-container">
-                    <JsIcon />
-                </div>
-
-                <div className="icon-container">
-                    <PythonIcon/>
-                </div>
-                <div className="icon-container">
-                    <NodeIcon />
-                </div>
-            </div>
             </div>
         </div>
     );
