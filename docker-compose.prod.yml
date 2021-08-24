@@ -56,8 +56,7 @@ services:
       - portafolio_net
     labels:
         - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
-
-   letsencrypt:
+  letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
     restart: always
     environment:
