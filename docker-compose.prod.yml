@@ -8,8 +8,6 @@ services:
     command: serve -s -p 3000
     ports:
       - "3000:3000"
-    volumes:
-      - "./client/:/client"
     networks:
       - portafolio_net
 
@@ -22,8 +20,6 @@ services:
       - "8000:8000"
     env_file:
       - ./server/.prod.env
-    volumes:
-      - "./server:/server"
     networks:
       - portafolio_net
 
