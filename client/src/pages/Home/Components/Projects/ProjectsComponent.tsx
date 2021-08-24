@@ -31,7 +31,7 @@ const ProjectsComponent = () => {
                         </div>
                         <div className="item-second-descr">
                             <p className="item-descr">
-                                This app also incorporates a dark theme to take care of the users' eyesight. All this
+                                This app also incorporates a dark theme to take care of the users' eyesight. All thisd
                                 application was created with the following technologies
                             </p>
                             <div className="technologies-item">
