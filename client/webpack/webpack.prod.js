@@ -41,6 +41,7 @@ module.exports = {
             filename: "index.html",
             minify: true,
             template: path.resolve(__dirname, "../src/index.html"),
+            favicon: path.resolve(__dirname, "../src/assets/logo.svg"),
         }),
         new MiniCssExtractPlugin({
             filename: "[hash].css",
